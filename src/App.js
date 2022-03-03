@@ -1,9 +1,12 @@
 import BottomNav from "./Components/BottomNav"
 
+import ShoppingList from './ShoppingList';
+
 function App() {
   return (
     <div>
-      <img src="https://logos-world.net/wp-content/uploads/2020/11/Costco-Wholesale-Logo.png" alt="costco logo" width="200"/>
+      {/* <img src={back} alt="costco logo" /> */}
+      <ShoppingList />
       <BottomNav/>
     </div>
   );
