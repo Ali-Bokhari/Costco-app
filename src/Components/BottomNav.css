@@ -1,0 +1,13 @@
+.bottomNav{
+    padding-top: 10px;
+    font-size: 0.55rem;
+    border-top: solid lightgrey 1px;
+}
+
+.bottomNav a{
+    color: black;
+}
+
+.bottomNav i{
+    font-size: 10px
+}
