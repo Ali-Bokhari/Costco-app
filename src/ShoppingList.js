@@ -11,14 +11,23 @@ import Category from './Category';
 
 function ShoppingList() {
 
-    const slist = {
+    const slist = [{
         category: "Chocolate",
         items: {
             1: "Chocolate-general",
             2: "Sam's chocolate"
         },
         aisle: 2
-    }
+    }, 
+    {
+        category: "Beverages",
+        items: {
+            1: "Moosehead Beer",
+            2: "Sprite Zero",
+            3: "Mountain Dew"
+        },
+        aisle: 6
+    }]
 
     function navHandler(event) {
         console.log('Nav button')
@@ -51,7 +60,9 @@ function ShoppingList() {
             </Container>
 
             <h4 className="mx-3">Category</h4><br />
-            <Category category={slist.category} items={slist.items} aisle={slist.aisle} />
+            {slist.map((cat, idx) => (
+                <Category key={idx} category={cat.category} items={cat.items} aisle={cat.aisle} />
+            ))};
         </div>
     );
 }
