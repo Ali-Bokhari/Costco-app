@@ -9,7 +9,7 @@ import mapLogo from './images/et_map.png'
 
 import Category from './Category';
 
-function ShoppingList() {
+const ShoppingList=()=> {
 
     const slist = [{
         category: "Chocolate",

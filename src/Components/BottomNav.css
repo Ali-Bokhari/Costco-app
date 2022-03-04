@@ -2,10 +2,12 @@
     padding-top: 10px;
     font-size: 0.55rem;
     border-top: solid lightgrey 1px;
+    background: white;
 }
 
 .bottomNav a{
     color: black;
+    text-decoration: none;
 }
 
 .bottomNav i{

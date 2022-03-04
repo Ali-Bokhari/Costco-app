@@ -2,10 +2,11 @@ import Nav from 'react-bootstrap/Nav'
 
 import "./BottomNav.css"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faC, faCoins, faIdCard, faListCheck, faEllipsis} from "@fortawesome/free-solid-svg-icons"
+import {faC, faCoins, faEllipsis, faIdCard, faListCheck} from "@fortawesome/free-solid-svg-icons"
+import {Link, NavLink} from 'react-router-dom';
 
 const BottomNav = () => {
-    return(
+    return (
         <Nav fill className="fixed-bottom bottomNav" activeKey="/home">
             <Nav.Item>
                 <FontAwesomeIcon icon={faC} className={"fa-xl"}/>
@@ -16,13 +17,18 @@ const BottomNav = () => {
                 <Nav.Link eventKey="link-1">Savings</Nav.Link>
             </Nav.Item>
             <Nav.Item>
-                <FontAwesomeIcon icon={faIdCard} className={"fa-xl"}/>
-                <Nav.Link eventKey="link-2">Card</Nav.Link>
+                <NavLink to="/search-new">
+                    <FontAwesomeIcon icon={faIdCard} className={"fa-xl"}/>
+                    <Nav.Link eventKey="link-2">Card</Nav.Link>
+                </NavLink>
             </Nav.Item>
             <Nav.Item>
-                <FontAwesomeIcon icon={faListCheck} className={"fa-xl"}/>
-                <Nav.Link eventKey="link-3">List</Nav.Link>
+                <NavLink to="/list">
+                    <FontAwesomeIcon icon={faListCheck} className={"fa-xl"}/>
+                    <Nav.Link>List</Nav.Link>
+                </NavLink>
             </Nav.Item>
+
             <Nav.Item>
                 <FontAwesomeIcon icon={faEllipsis} className={"fa-xl"}/>
                 <Nav.Link eventKey="link-4">Menu</Nav.Link>
