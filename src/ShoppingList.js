@@ -1,13 +1,13 @@
-import Form from 'react-bootstrap/Form';
 import Image from 'react-bootstrap/Image';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
-import navLogo from './images/bx_navigation.png';
-import mapLogo from './images/et_map.png'
+import filter from './images/Filter.png';
+import mapLogo from './images/Group.png'
 
 import Category from './Category';
+import './ShoppingList.css'
 
 const ShoppingList=()=> {
 
@@ -27,6 +27,15 @@ const ShoppingList=()=> {
             3: "Mountain Dew"
         },
         aisle: 6
+    },
+    {
+        category:"Meat and Seafood",
+        items: {
+            1: "Beef - Generic",
+            2: "Foster Farm's Chicken",
+            3: "Chicken - Generic"
+        },
+        aisle: 7
     }]
 
     function navHandler(event) {
@@ -38,31 +47,39 @@ const ShoppingList=()=> {
     }
 
     return (
-        <div>
-            <h1 className="my-3 text-center">Shopping List</h1><br />
-            <Form.Group className="mx-3" controlId="dob">
+        <div className="shoppinglist">
+            <div className="headerdiv">
+                <br /><h1 className="my-3 py-2 text-center header">Shopping List</h1>
+            </div>
+
+            {/* <Form.Group className="mx-3" controlId="dob">
                 <Form.Control type="date" name="shopping_date" placeholder="Trip date"/>
-            </Form.Group> <br />
+            </Form.Group> <br /> */}
 
             <Container>
-                <Row className="mx-3">
+                <Row className="mx-0">
                     <Col>
+                        <h4 className="my-2 categoriesheader">Categories</h4>
                     </Col>
-                    <Col xs={2} onClick={navHandler}>
-                        <Image src={navLogo} />
-                        Nav
+                    <Col xs={1} onClick={navHandler} className="mx-1">
+                        <Image src={mapLogo} />
+                        <p className="shoppingicons">Nav</p>
                     </Col>
-                    <Col xs={2} onClick={mapHandler}>
-                        <Image height="30" src={mapLogo} />
-                        Map
+                    <Col xs={1} onClick={mapHandler} className="mx-1">
+                        <Image src={filter} />
+                        <p className="shoppingicons">Filter</p>
                     </Col>
                 </Row>
             </Container>
 
-            <h4 className="mx-3">Category</h4><br />
-            {slist.map((cat, idx) => (
-                <Category key={idx} category={cat.category} items={cat.items} aisle={cat.aisle} />
-            ))};
+            <div className="py-3 bcolor">
+                <div className="mx-4">
+                    <p className="completedtext">Completed: 1/8</p>
+                    {slist.map((cat, idx) => (
+                        <Category key={idx} category={cat.category} items={cat.items} aisle={cat.aisle} />
+                    ))}
+                </div>
+            </div>
         </div>
     );
 }

@@ -1,5 +1,3 @@
-
-
 import AddNewItemBar from './Components/AddNewItemBar'
 
 import SearchNew from './Pages/search-new'
@@ -24,4 +22,17 @@ const App = ()=> {
     );
 }
 
-export default App;
+// import back from './images/CostcoBackground.png';
+
+// import ShoppingList from './ShoppingList';
+
+// function App() {
+//   return (
+//     <div>
+//       {/* <img src={back} alt="costco logo" /> */}
+//       <ShoppingList />
+//     </div>
+//   );
+// }
+
+// export default App;

@@ -1,8 +1,11 @@
 import Alert from 'react-bootstrap/Alert'
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Accordion from 'react-bootstrap/Accordion';
+import Form from 'react-bootstrap/Form';
+
+import './Category.css'
 
 function Category(props) {
 
@@ -12,19 +15,24 @@ function Category(props) {
 
     const items = Object.values(props.items)
     return (
-        <div className="mx-4">
-            <h5>{props.category}</h5><hr />
+        <Accordion defaultActiveKey="0">
+            <Accordion.Item eventKey="0" className="border border-0 border-white">
+            <Accordion.Header className="bcolor">{props.category}</Accordion.Header>
+            <Accordion.Body className="bcolor">
             {items.map((item, idx) => (
-                <Alert variant="primary" key={idx} onClick={itemHandler}>
+                <Alert variant="light" key={idx} onClick={itemHandler} className="py-1 border-dark">
                     <Container>
                         <Row>
+                        {/* <Col xs={1}><Form.Check className=""/></Col> */}
                         <Col>{item}</Col>
                         <Col xs={3}>Aisle {props.aisle}</Col>
                         </Row>
                     </Container>
                 </Alert>
             ))}
-        </div>
+            </Accordion.Body>
+            </Accordion.Item>
+        </Accordion>
     );
 }
 

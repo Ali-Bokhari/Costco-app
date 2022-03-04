@@ -1,0 +1,29 @@
+.customcategory{
+    background: #FAFDFF;
+}
+
+.accordian{
+    border-style: hidden;
+}
+
+button.accordion-button:not(.collapsed){
+    color: #000000;
+    background-color: #F0F7FA;
+}
+
+button.accordion-button.collapsed{
+    color: #000000;
+    background-color: #F0F7FA;
+}
+
+button.accordion-button{
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 16px;
+    padding: 0;
+    padding-bottom: 8px;
+}
+
+div.bcolor.accordion-body{
+    padding: 0;
+}
