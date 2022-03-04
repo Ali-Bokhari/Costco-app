@@ -1,0 +1,22 @@
+.searchResultItem img{
+    height: 65px;
+}
+
+.searchResultItem .card-body{
+    padding: 0px 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.searchResultItem p{
+    margin-bottom: 0;
+    flex: 10 1 auto;
+}
+
+.add-icon {
+    float: right;
+}
