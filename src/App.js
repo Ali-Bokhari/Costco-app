@@ -9,13 +9,42 @@ import {BrowserRouter as Router, Routes, Route, Redirect, Switch} from 'react-ro
 
 
 const App = ()=> {
+
+    let slist = [{
+        category: "Chocolate",
+        items: {
+            "Chocolate-general": false,
+            "Sam's chocolate": false,
+            "Kitkat": false
+        },
+        aisle: 2
+    }, 
+    {
+        category: "Beverages",
+        items: {
+            "Moosehead Beer": false,
+            "Sprite Zero": false,
+            "Mountain Dew": false
+        },
+        aisle: 6
+    },
+    {
+        category:"Meat and Seafood",
+        items: {
+            "Beef - Generic": false,
+            "Foster Farm's Chicken": false,
+            "Chicken - Generic": false
+        },
+        aisle: 7
+    }]
+
     return (
         <div>
             <Route path="/list">
-                <List/>
+                <List slist={slist}/>
             </Route>
             <Route path="/search-new">
-                <SearchNew/>
+                <SearchNew slist={slist}/>
             </Route>
             {/*<img src={back} alt="costco logo" /> */}
         </div>

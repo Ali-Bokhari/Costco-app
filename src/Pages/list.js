@@ -2,10 +2,11 @@ import BottomNav from "../Components/BottomNav";
 import ShoppingList from '../Components/ShoppingList/ShoppingList';
 
 
-const List = () => {
+const List = (props) => {
+
     return(
         <div>
-            <ShoppingList/>
+            <ShoppingList slist={props.slist}/>
             <BottomNav/>
         </div>
     )

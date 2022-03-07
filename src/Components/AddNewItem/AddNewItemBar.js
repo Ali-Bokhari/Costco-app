@@ -1,8 +1,8 @@
 import {Form} from "react-bootstrap/esm/index";
-import "./AddNewItemBar.css"
+import "./AddNewItemBar.css";
 import SearchResultItem from "./SearchResultItem";
 
-const AddNewItemBar = () => {
+const AddNewItemBar = (props) => {
     return(
         <div className="addNewItemBar">
             <Form>
@@ -19,4 +19,4 @@ const AddNewItemBar = () => {
 
 }
 
-export default AddNewItemBar
+export default AddNewItemBar;

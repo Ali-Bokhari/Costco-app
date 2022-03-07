@@ -27,3 +27,11 @@ button.accordion-button{
 div.bcolor.accordion-body{
     padding: 0;
 }
+
+input.form-check-input{
+    margin-top: 0;
+}
+
+.strikethrough{
+    text-decoration: line-through;
+}
