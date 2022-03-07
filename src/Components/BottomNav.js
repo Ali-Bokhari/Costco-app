@@ -19,13 +19,13 @@ const BottomNav = () => {
             <Nav.Item>
                 <NavLink to="/search-new">
                     <FontAwesomeIcon icon={faIdCard} className={"fa-xl"}/>
-                    <Nav.Link eventKey="link-2">Card</Nav.Link>
+                    <p>Card</p>
                 </NavLink>
             </Nav.Item>
             <Nav.Item>
                 <NavLink to="/list">
                     <FontAwesomeIcon icon={faListCheck} className={"fa-xl"}/>
-                    <Nav.Link>List</Nav.Link>
+                    <p>List</p>
                 </NavLink>
             </Nav.Item>
 
