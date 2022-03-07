@@ -1,8 +1,8 @@
-import Alert from 'react-bootstrap/Alert'
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Accordion from 'react-bootstrap/Accordion';
+import Alert from 'react-bootstrap/esm/Alert'
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row'
+import Col from 'react-bootstrap/esm/Col'
+import Accordion from 'react-bootstrap/esm/Accordion';
 
 import './Category.css'
 

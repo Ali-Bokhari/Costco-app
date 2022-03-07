@@ -1,10 +1,10 @@
-import Image from 'react-bootstrap/Image';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Image from 'react-bootstrap/esm/Image';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row'
+import Col from 'react-bootstrap/esm/Col'
 
-import filter from './images/Filter.png';
-import mapLogo from './images/Group.png'
+import filter from '../../images/Filter.png';
+import mapLogo from '../../images/Group.png'
 
 import Category from './Category';
 import './ShoppingList.css'

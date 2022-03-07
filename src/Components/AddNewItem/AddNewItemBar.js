@@ -1,4 +1,4 @@
-import {Form} from "react-bootstrap";
+import {Form} from "react-bootstrap/esm/index";
 import "./AddNewItemBar.css"
 import SearchResultItem from "./SearchResultItem";
 

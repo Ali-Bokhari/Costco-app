@@ -1,4 +1,4 @@
-import AddNewItemBar from './Components/AddNewItemBar'
+import AddNewItemBar from './Components/AddNewItem/AddNewItemBar'
 
 import SearchNew from './Pages/search-new'
 

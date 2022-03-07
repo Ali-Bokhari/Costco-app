@@ -1,4 +1,4 @@
-import AddNewItemBar from '../Components/AddNewItemBar'
+import AddNewItemBar from '../Components/AddNewItem/AddNewItemBar'
 
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom';
 import BottomNav from "../Components/BottomNav";

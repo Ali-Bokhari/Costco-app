@@ -1,5 +1,5 @@
 import BottomNav from "../Components/BottomNav";
-import ShoppingList from '../ShoppingList';
+import ShoppingList from '../Components/ShoppingList/ShoppingList';
 
 
 const List = () => {
