@@ -28,9 +28,8 @@ function Category(props) {
                 <Alert variant="light" key={idx} disabled data-key={idx} onClick={itemHandler} className="py-1 border-dark">
                     <Container>
                         <Row className="itemrow">
-                        <Col data-key={idx} xs={1} ><Form.Check disabled checked={props.items[item.toString()]} className=""/></Col>
-                        {/* {if (props.items[item.toString()]) {itemclass += " strikethrough"}} */}
-                        <Col data-key={idx} className='text-center'>{item}</Col>
+                        <Col data-key={idx} xs={1} ><Form.Check disabled checked={props.items[item.toString()]}/></Col>
+                        <Col data-key={idx} className={itemclass + " itemcross" + props.items[item.toString()]}>{item}</Col>
                         <Col data-key={idx} xs={3}>Aisle {props.aisle}</Col>
                         </Row>
                     </Container>

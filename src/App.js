@@ -51,17 +51,4 @@ const App = ()=> {
     );
 }
 
-// import back from './images/CostcoBackground.png';
-
-// import ShoppingList from './ShoppingList';
-
-// function App() {
-//   return (
-//     <div>
-//       {/* <img src={back} alt="costco logo" /> */}
-//       <ShoppingList />
-//     </div>
-//   );
-// }
-
 export default App;

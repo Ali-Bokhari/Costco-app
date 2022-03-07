@@ -15,6 +15,11 @@ import { useState } from 'react';
 function ShoppingList(props) {
 
     const [checked, setChecked] = useState(0);
+    let totalItems = 0;
+
+    for (const i of props.slist) {
+        totalItems += Object.keys(i.items).length;
+    }
 
     function navHandler(event) {
         console.log('Nav button')
@@ -65,7 +70,7 @@ function ShoppingList(props) {
 
             <div className="py-3 bcolor">
                 <div className="mx-4">
-                    <p className="completedtext" onClick={updateChecked}>Completed: {checked}/8</p>
+                    <p className="completedtext" onClick={updateChecked}>Completed: {checked}/{totalItems}</p>
                     {props.slist.map((cat, idx) => (
                         <Category key={idx} category={cat.category} items={cat.items} aisle={cat.aisle} category_num={idx} changeChecked={checkedHandler}/>
                     ))}
