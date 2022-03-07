@@ -10,6 +10,34 @@ import {useEffect, useState} from "react";
 
 
 const App = ()=> {
+    let slist = [{
+        category: "Chocolate",
+        items: {
+            "Chocolate-general": false,
+            "Sam's chocolate": false,
+            "Kitkat": false
+        },
+        aisle: 2
+    },
+        {
+            category: "Beverages",
+            items: {
+                "Moosehead Beer": false,
+                "Sprite Zero": false,
+                "Mountain Dew": false
+            },
+            aisle: 6
+        },
+        {
+            category:"Meat and Seafood",
+            items: {
+                "Beef - Generic": false,
+                "Foster Farm's Chicken": false,
+                "Chicken - Generic": false
+            },
+            aisle: 7
+        }]
+
 
     const [ShoppingListItems, setShoppingListItems] = useState([])
 
@@ -26,7 +54,7 @@ const App = ()=> {
     return (
         <div>
             <Route path="/list">
-                <List/>
+                <List slist={slist}/>
             </Route>
             <Route path="/search-new">
                 <SearchNew onChangeShoppingListItems = {changeShoppingListItemsHandler} />
@@ -35,18 +63,4 @@ const App = ()=> {
         </div>
     );
 }
-
-// import back from './images/CostcoBackground.png';
-
-// import ShoppingList from './ShoppingList';
-
-// function App() {
-//   return (
-//     <div>
-//       {/* <img src={back} alt="costco logo" /> */}
-//       <ShoppingList />
-//     </div>
-//   );
-// }
-
 export default App;
