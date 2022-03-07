@@ -5,6 +5,7 @@ import SearchResultItem from "./SearchResultItem";
 import {faAngleLeft} from "@fortawesome/free-solid-svg-icons"
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
+import "../../index.css"
 
 const items_data = [
     {

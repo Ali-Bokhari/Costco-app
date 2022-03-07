@@ -13,3 +13,12 @@
 .bottomNav i{
     font-size: 10px
 }
+
+.bottomNav .nav-item{
+    width: 20%
+}
+
+.bottomNav h6{
+    padding-top: 10px;
+    font-size: 0.7rem;
+}
