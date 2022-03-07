@@ -26,8 +26,12 @@
     width: 75%
 }
 
-.add-icon {
+.actionIcon {
     /*float: right;*/
     /*flex: 6;*/
     width: 10%;
+}
+
+.tick {
+    color: forestgreen;
 }

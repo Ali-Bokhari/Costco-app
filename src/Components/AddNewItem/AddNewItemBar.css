@@ -3,14 +3,18 @@
 }
 
 .goBackLink {
-    margin-bottom: 10px
+    margin-bottom: 10px;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
 }
 
 .goBackLink b{
-    margin-left: 3px
+    font-size: 12px;
+    margin-left: 3px;
 }
 
-.goBackLink a{
+.goBackLinkContainer{
     text-decoration: none;
     color: black;
 }

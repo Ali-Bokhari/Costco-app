@@ -9,35 +9,43 @@ import "../../index.css"
 
 const items_data = [
     {
+        id: '633651',
         name: "Apple ",
         aisle: 1,
         image: "/images/Heinz-Tomato-Paste.png",
     },
     {
+        id: '633652',
         name: "Banana",
         aisle: 1,
         image: "/images/Heinz-Tomato-Paste.png",
     },
     {
+        id: '633653',
         name: "Apple Pie",
         aisle: 10,
         image: "/images/Heinz-Tomato-Paste.png",
     },
     {
+        id: '633654',
         name: "Apparatus",
         aisle: 4,
         image: "/images/Heinz-Tomato-Paste.png",
     },
     {
+        id: '633655',
         name: "Tortillas",
         aisle: 6,
         image: "/images/Heinz-Tomato-Paste.png",
     }
 ]
 
-const AddNewItemBar = () => {
+const AddNewItemBar = (props) => {
+    let listItems = [] //storing the updated shopping list items
+
     const [query, setQuery] = useState('')
     const [searchResult, setSearchResult] = useState([])
+
     const searchChangeHandler = (event) => {
         setQuery(event.target.value);
         setSearchResult(
@@ -50,15 +58,29 @@ const AddNewItemBar = () => {
         console.log(searchResult)
     }
 
+    const clickItemHandler = (item, isChosen) => {
+        console.log("clicked item:")
+        console.log(item, isChosen)
+        if(isChosen){// if isChosen is true, means that we need to append this item to the list
+            listItems.push(item)
+        }else{// if isChosen is false, means that we need to delete this item to the list
+            //finding the item id that we want to remove from the shopping list
+            let idToRemove = listItems.map(function(t) {
+                return t.id
+            }).indexOf(item.id);
+            listItems.splice(idToRemove, 1);
+        }
+        props.onChangeShoppingListItems(listItems)
+    }
+
     return (
         <div className="addNewItemBar">
-
-            <div className="goBackLink">
-                <Link to="/list">
+            <Link className="goBackLinkContainer" to="/list">
+                <div className="goBackLink">
                     <FontAwesomeIcon icon={faAngleLeft}/>
                     <b>Back</b>
-                </Link>
-            </div>
+                </div>
+            </Link>
             <Form>
                 <Form.Group className="mb-3" controlId="">
                     <Form.Control onChange={searchChangeHandler} type="text"
@@ -67,7 +89,7 @@ const AddNewItemBar = () => {
             </Form>
             {searchResult.map(
                 item => {
-                    return <SearchResultItem name={item.name} image={item.image}/>
+                    return <SearchResultItem item={item} onClickItem={clickItemHandler}/>
                 }
             )}
         </div>
