@@ -19,24 +19,24 @@ const App = ()=> {
         },
         aisle: 2
     },
-        {
-            category: "Beverages",
-            items: {
-                "Moosehead Beer": false,
-                "Sprite Zero": false,
-                "Mountain Dew": false
-            },
-            aisle: 6
+    {
+        category: "Beverages",
+        items: {
+            "Moosehead Beer": false,
+            "Sprite Zero": false,
+            "Mountain Dew": false
         },
-        {
-            category:"Meat and Seafood",
-            items: {
-                "Beef - Generic": false,
-                "Foster Farm's Chicken": false,
-                "Chicken - Generic": false
-            },
-            aisle: 7
-        }]);
+        aisle: 6
+    },
+    {
+        category:"Meat and Seafood",
+        items: {
+            "Beef - Generic": false,
+            "Foster Farm's Chicken": false,
+            "Chicken - Generic": false
+        },
+        aisle: 20
+    }]);
 
 
     const [ShoppingListItems, setShoppingListItems] = useState([])
@@ -60,7 +60,7 @@ const App = ()=> {
                 <SearchNew onChangeShoppingListItems = {changeShoppingListItemsHandler} />
             </Route>
             <Route path="/map">
-                <Map />
+                <Map slist={slist}/>
             </Route>
             {/*<img src={back} alt="costco logo" /> */}
         </div>

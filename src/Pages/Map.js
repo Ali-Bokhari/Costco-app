@@ -2,11 +2,11 @@ import MapArea from '../Components/Map/MapArea';
 import BottomNav from "../Components/BottomNav";
 import Header from "../Components/Header";
 
-function Map() {
+function Map (props){
     return (
         <div>
             <Header title={"Navigation - Map"}/>
-            <MapArea/>
+            <MapArea slist={props.slist}/>
             <BottomNav/>
         </div>
     )
