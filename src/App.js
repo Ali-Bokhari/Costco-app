@@ -17,7 +17,7 @@ const App = ()=> {
             "Sam's chocolate": false,
             "Kitkat": false
         },
-        aisle: 2
+        aisle: 6
     },
     {
         category: "Beverages",
@@ -26,7 +26,7 @@ const App = ()=> {
             "Sprite Zero": false,
             "Mountain Dew": false
         },
-        aisle: 6
+        aisle: 11
     },
     {
         category:"Meat and Seafood",
