@@ -11,6 +11,7 @@ import Category from './Category';
 import './ShoppingList.css'
 
 import { useState } from 'react';
+import {Link, NavLink} from "react-router-dom";
 
 function ShoppingList(props) {
 
@@ -48,10 +49,6 @@ function ShoppingList(props) {
 
     return (
         <div className="shoppinglist">
-            <div className="headerdiv">
-                <br /><h1 className="my-3 py-2 text-center header">Shopping List</h1>
-            </div>
-
             <Container>
                 <Row className="mx-0">
                     <Col>
@@ -76,7 +73,9 @@ function ShoppingList(props) {
                     ))}
                 </div>
             </div>
-            <Image src={addicon} className="addicon" />
+            <Link to="/search-new">
+                <Image src={addicon} className="addicon" />
+            </Link>
         </div>
     );
 }

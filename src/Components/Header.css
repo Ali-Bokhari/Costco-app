@@ -1,0 +1,14 @@
+.headerdiv {
+    background: #416EA3;
+    /*position: fixed;*/
+    /*top: 0;*/
+    /*width: 100%;*/
+    /*z-index: 1;*/
+}
+
+.header {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
