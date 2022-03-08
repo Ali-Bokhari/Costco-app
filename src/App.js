@@ -1,8 +1,8 @@
 import AddNewItemBar from './Components/AddNewItem/AddNewItemBar'
 
 import SearchNew from './Pages/search-new'
-
 import List from './Pages/list'
+import Map from './Pages/Map'
 
 import {BrowserRouter as Router, Routes, Route, Redirect, Switch} from 'react-router-dom';
 import {useEffect, useState} from "react";
@@ -58,6 +58,9 @@ const App = ()=> {
             </Route>
             <Route path="/search-new">
                 <SearchNew onChangeShoppingListItems = {changeShoppingListItemsHandler} />
+            </Route>
+            <Route path="/map">
+                <Map />
             </Route>
             {/*<img src={back} alt="costco logo" /> */}
         </div>
