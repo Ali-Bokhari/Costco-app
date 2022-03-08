@@ -1,0 +1,2 @@
+function MapArea(props) {
+}

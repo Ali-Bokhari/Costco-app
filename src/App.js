@@ -10,7 +10,7 @@ import {useEffect, useState} from "react";
 
 
 const App = ()=> {
-    let slist = [{
+    const [slist, setslist] = useState([{
         category: "Chocolate",
         items: {
             "Chocolate-general": false,
@@ -36,7 +36,7 @@ const App = ()=> {
                 "Chicken - Generic": false
             },
             aisle: 7
-        }]
+        }]);
 
 
     const [ShoppingListItems, setShoppingListItems] = useState([])

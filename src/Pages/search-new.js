@@ -8,8 +8,8 @@ import Header from "../Components/Header";
 
 const SearchNew=(props)=> {
     const changeShoppingListItemsHandler = (listItems) => {
-        console.log("ShoppingListItems @ search-new.js:")
-        console.log(listItems)
+        // console.log("ShoppingListItems @ search-new.js:")
+        // console.log(listItems)
         props.onChangeShoppingListItems(listItems)
     }
 

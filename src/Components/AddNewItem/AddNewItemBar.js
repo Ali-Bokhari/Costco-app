@@ -93,8 +93,8 @@ const AddNewItemBar = (props) => {
                 </Form.Group>
             </Form>
             {searchResult.map(
-                item => {
-                    return <SearchResultItem item={item} onClickItem={clickItemHandler}/>
+                (item, idx) => {
+                    return <SearchResultItem item={item} key={idx} onClickItem={clickItemHandler}/>
                 }
             )}
         </div>
