@@ -11,30 +11,35 @@ const items_data = [
     {
         id: '633651',
         name: "Apple ",
+        category:"Fruits & Vegetables",
         aisle: 1,
         image: "/images/Heinz-Tomato-Paste.png",
     },
     {
         id: '633652',
         name: "Banana",
+        category:"Fruits & Vegetables",
         aisle: 1,
         image: "/images/Heinz-Tomato-Paste.png",
     },
     {
         id: '633653',
         name: "Apple Pie",
+        category:"Bread & Bakery Products",
         aisle: 10,
         image: "/images/Heinz-Tomato-Paste.png",
     },
     {
         id: '633654',
         name: "Apparatus",
+        category:"Fruits & Vegetables",
         aisle: 4,
         image: "/images/Heinz-Tomato-Paste.png",
     },
     {
         id: '633655',
         name: "Tortillas",
+        category:"Bread & Bakery Products",
         aisle: 6,
         image: "/images/Heinz-Tomato-Paste.png",
     }
