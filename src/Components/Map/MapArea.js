@@ -10,7 +10,7 @@ import {coordinates_arr} from "./aisle-coordinates"
 function MapArea(props) {
     let s_markers=[];
     for (const i of props.slist){
-        s_markers.push(coordinates_arr[i.aisle]);
+        s_markers.push(coordinates_arr[i.aisle-1]);
     }
     const [markers, setMarkers] = useState(s_markers);
 
