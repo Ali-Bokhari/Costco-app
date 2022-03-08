@@ -1,10 +1,13 @@
 import ImageMarker, { Marker } from 'react-image-marker';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 
 import costcoMap from '../../images/LabledMap.png'
+import {coordinates_arr} from "./aisle-coordinates"
 
 function MapArea(props) {
-    let [markers, setMarkers] = useState([]);
+    console.log(coordinates_arr)
+    let [markers, setMarkers] = useState(coordinates_arr);
+    // useEffect(() => {console.log(markers)}, [markers])
     return(
         <ImageMarker
         src={costcoMap}
@@ -15,3 +18,5 @@ function MapArea(props) {
 }
 
 export default MapArea;
+
+
