@@ -60,7 +60,7 @@ const App = ()=> {
                 <SearchNew onChangeShoppingListItems = {changeShoppingListItemsHandler} />
             </Route>
             <Route path="/map">
-                <Map />
+                <Map slist={slist}/>
             </Route>
             {/*<img src={back} alt="costco logo" /> */}
         </div>

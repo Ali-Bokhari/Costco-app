@@ -1,8 +1,8 @@
 import MapArea from '../Components/Map/MapArea';
 
-function Map (){
+function Map (props){
     return (
-        <MapArea />
+        <MapArea slist={props.slist}/>
     )
 }
 
