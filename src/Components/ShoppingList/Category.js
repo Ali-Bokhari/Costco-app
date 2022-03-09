@@ -19,6 +19,7 @@ function Category(props) {
     let itemclass= "text-center";
 
     const items = Object.keys(props.items);
+    console.log(items)
     return (
         <Accordion defaultActiveKey="0">
             <Accordion.Item eventKey="0" className="border border-0 border-white">

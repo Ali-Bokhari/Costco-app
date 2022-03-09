@@ -1,42 +1,40 @@
-import AddNewItemBar from './Components/AddNewItem/AddNewItemBar'
-
 import SearchNew from './Pages/search-new'
 import List from './Pages/list'
 import Map from './Pages/Map'
 
-import {BrowserRouter as Router, Routes, Route, Redirect, Switch} from 'react-router-dom';
+import {Route} from 'react-router-dom';
 import {useEffect, useState} from "react";
 
 
-
-const App = ()=> {
-    const [slist, setslist] = useState([{
-        category: "Chocolate",
-        items: {
-            "Chocolate-general": false,
-            "Sam's chocolate": false,
-            "Kitkat": false
+const App = () => {
+    const [slist, setslist] = useState([
+        {
+            category: "Chocolate",
+            items: [
+                {name: "Chocolate-general", isChecked: false},
+                {name: "Sam's chocolate", isChecked: false},
+                {name: "Kitkat", isChecked: false}
+            ],
+            aisle: 6
         },
-        aisle: 6
-    },
-    {
-        category: "Beverages",
-        items: {
-            "Moosehead Beer": false,
-            "Sprite Zero": false,
-            "Mountain Dew": false
+        {
+            category: "Beverages",
+            items: [
+                {name: "Moosehead Beer", isChecked: false},
+                {name: "Sprite Zero", isChecked: false},
+                {name: "Mountain Dew", isChecked: false}
+            ],
+            aisle: 11
         },
-        aisle: 11
-    },
-    {
-        category:"Meat and Seafood",
-        items: {
-            "Beef - Generic": false,
-            "Foster Farm's Chicken": false,
-            "Chicken - Generic": false
-        },
-        aisle: 20
-    }]);
+        {
+            category: "Meat and Seafood",
+            items: [
+                {name: "Beef - Generic", isChecked: false},
+                {name: "Foster Farm's Chicken", isChecked: false},
+                {name: "Chicken - Generic", isChecked: false}
+            ],
+            aisle: 20
+        }]);
 
 
     const [ShoppingListItems, setShoppingListItems] = useState([])
@@ -57,7 +55,7 @@ const App = ()=> {
                 <List slist={slist}/>
             </Route>
             <Route path="/search-new">
-                <SearchNew onChangeShoppingListItems = {changeShoppingListItemsHandler} />
+                <SearchNew onChangeShoppingListItems={changeShoppingListItemsHandler}/>
             </Route>
             <Route path="/map">
                 <Map slist={slist}/>
