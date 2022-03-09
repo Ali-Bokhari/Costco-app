@@ -11,14 +11,26 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import {coordinates_arr} from "./aisle-coordinates"
 import "./MapArea.css"
 
-function MapArea(props) {
-    let s_markers = [];
-    for (const i of props.slist) {
-        s_markers.push(coordinates_arr[i.aisle - 1]);
+const areAllItemsChecked = (items) => {
+    for (const i of items) {
+        if (!i.isChecked) {
+            return false;
+        }
     }
+    return true;
+}
 
-    const [redMarkers, setRedMarkers] = useState(s_markers);
-    const [blueMarkers, setBlueMarkers] = useState(s_markers.splice(2, 1));
+function MapArea(props) {
+    const [redMarkers, setRedMarkers] = useState([]);
+    const [blueMarkers, setBlueMarkers] = useState([]);
+
+    for (const itemGroup of props.slist) {
+        if (areAllItemsChecked(itemGroup.items)) {
+            blueMarkers.push(coordinates_arr[itemGroup.aisle - 1])
+        } else {
+            redMarkers.push(coordinates_arr[itemGroup.aisle - 1]);
+        }
+    }
 
     function RedMarker() {
         const popover = (
