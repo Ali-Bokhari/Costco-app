@@ -6,6 +6,8 @@ import redMarker from '../../images/redmarker.png'
 import blueMarker from '../../images/bluemarker.png'
 
 import Image from 'react-bootstrap/Image';
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import {coordinates_arr} from "./aisle-coordinates"
 import "./MapArea.css"
 
@@ -31,8 +33,18 @@ function MapArea(props) {
     }
 
     function RedMarker() {
+        const popover = (
+          <Popover id="popover-basic">
+            <Popover.Header as="h6">items</Popover.Header>
+            <Popover.Body>
+              item1
+            </Popover.Body>
+          </Popover>
+        );
         return (
-            <Image src={redMarker}/>
+          <OverlayTrigger trigger="click" placement="right" overlay={popover}>
+          <Image src={redMarker}/>
+        </OverlayTrigger>
         );
     }
 
