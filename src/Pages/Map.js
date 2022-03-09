@@ -11,18 +11,20 @@ function Map (props){
     return (
         <div className="map-page">
             <Header title={"Navigation - Map"}/>
-            <Card className="store-info-card">
-                <Card.Body>
-                    <h6><strong>My Store</strong></h6>
-                    <Row className="store-info">
-                        <Col xs={9}>
-                            <strong>Toronto - 100 Billy Bishop Way</strong>
-                            <div>Closes at 10pm</div>
-                        </Col>
-                        <Col xs={3} id="change-store-btn">Change</Col>
-                    </Row>
-                </Card.Body>
-            </Card>
+            <div className="store-info-card">
+                <Card >
+                    <Card.Body>
+                        <h6><strong>My Store</strong></h6>
+                        <Row className="store-info">
+                            <Col xs={9}>
+                                <strong>Toronto - 100 Billy Bishop Way</strong>
+                                <div>Closes at 10pm</div>
+                            </Col>
+                            <Col xs={3} id="change-store-btn">Change</Col>
+                        </Row>
+                    </Card.Body>
+                </Card>
+            </div>
 
             <div className="overview-card">
                 <Card>

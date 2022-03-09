@@ -15,12 +15,17 @@
 }
 
 .store-info-card{
+    width: 100%;
+}
+
+.store-info-card .card{
     padding: 0 10%;
-    width: 105%;
     margin-bottom: 20px;
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
     box-shadow: 0 4px 6px -6px #222;
+    border-width: 0 0 1px 0;
+    border-radius: 0;
 }
 
 .store-info-card .card-body{
