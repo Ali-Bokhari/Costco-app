@@ -18,29 +18,27 @@ function MapArea(props) {
     const [markers, setMarkers] = useState(s_markers);
 
     function CustomMarker() {
-      if(markcolor) {
-        return (
-          <Image src={redMarker}/>
-        );
-      } else {
-        return (
-          <Image src={blueMarker}/>
-        );
-      }
+        if (markcolor) {
+            return (
+                <Image src={redMarker}/>
+            );
+        } else {
+            return (
+                <Image src={blueMarker}/>
+            );
+        }
 
     }
 
-    function addMarker (marker) {
-      markcolor = false;
-      setMarkers((prev) => [...prev, marker]);
+    function addMarker(marker) {
+        markcolor = false;
+        setMarkers((prev) => [...prev, marker]);
     }
 
-    return(
+    return (
         <ImageMarker src={costcoMap} markers={markers} onAddMarker={addMarker} markerComponent={CustomMarker}/>
     );
 }
-
-// (marker) => setMarkers((prev) => [...prev, marker])
 
 export default MapArea;
 
