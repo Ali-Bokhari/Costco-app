@@ -54,9 +54,11 @@ function ShoppingList(props) {
                     <Col>
                         <h4 className="my-2 categoriesheader">Categories</h4>
                     </Col>
-                    <Col xs={1} onClick={navHandler} className="mx-1">
-                        <Image src={mapLogo} />
-                        <p className="shoppingicons">Nav</p>
+                    <Col xs={1} className="mx-1">
+                        <Link to="/map">
+                            <Image src={mapLogo} />
+                            <p className="shoppingicons">Nav</p>
+                        </Link>
                     </Col>
                     <Col xs={1} onClick={mapHandler} className="mx-1">
                         <Image src={filter} />
