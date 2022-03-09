@@ -9,23 +9,26 @@ import Image from 'react-bootstrap/Image';
 import {coordinates_arr} from "./aisle-coordinates"
 import "./MapArea.css"
 
-const isItemsChecked = (items) =>{
-    for(const i of items){
-        console.log(i)
+const areAllItemsChecked = (items) => {
+    for (const i of items) {
+        if (!i.isChecked) {
+            return false;
+        }
     }
+    return true;
 }
 
 function MapArea(props) {
-    let s_markers = [];
-    for (const itemGroup of props.slist) {
-        if(isItemsChecked(itemGroup.items)){
-            console.log("all checked")
-        }
-        s_markers.push(coordinates_arr[itemGroup.aisle - 1]);
-    }
+    const [redMarkers, setRedMarkers] = useState([]);
+    const [blueMarkers, setBlueMarkers] = useState([]);
 
-    const [redMarkers, setRedMarkers] = useState(s_markers);
-    const [blueMarkers, setBlueMarkers] = useState(s_markers.splice(2, 1));
+    for (const itemGroup of props.slist) {
+        if (areAllItemsChecked(itemGroup.items)) {
+            blueMarkers.push(coordinates_arr[itemGroup.aisle - 1])
+        } else {
+            redMarkers.push(coordinates_arr[itemGroup.aisle - 1]);
+        }
+    }
 
     function RedMarker() {
         return (
