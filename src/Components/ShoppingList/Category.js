@@ -10,16 +10,12 @@ import './Category.css'
 function Category(props) {
 
     function itemHandler(event) {
-        // console.log(event);
-        // console.log(Object.keys(props.items)[event.target.getAttribute('data-key')]);
-        // console.log(props.category_num);
-        props.changeChecked(props.category_num, Object.keys(props.items)[event.target.getAttribute('data-key')]);
+        props.changeChecked(props.category_num, parseInt(event.target.getAttribute('data-key')))
     }
 
     let itemclass= "text-center";
 
-    const items = Object.keys(props.items);
-    console.log(items)
+    const items = props.items;
     return (
         <Accordion defaultActiveKey="0">
             <Accordion.Item eventKey="0" className="border border-0 border-white">
@@ -29,8 +25,8 @@ function Category(props) {
                 <Alert variant="light" key={idx} disabled data-key={idx} onClick={itemHandler} className="py-1 border-dark">
                     <Container>
                         <Row className="itemrow">
-                        <Col data-key={idx} xs={1} ><Form.Check disabled checked={props.items[item.toString()]}/></Col>
-                        <Col data-key={idx} className={itemclass + " itemcross" + props.items[item.toString()]}>{item}</Col>
+                        <Col data-key={idx} xs={1} ><Form.Check disabled checked={item.isChecked}/></Col>
+                        <Col data-key={idx} className={itemclass + " itemcross"}>{item.name}</Col>
                         <Col data-key={idx} xs={3}>Aisle {props.aisle}</Col>
                         </Row>
                     </Container>

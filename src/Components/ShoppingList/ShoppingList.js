@@ -34,7 +34,7 @@ function ShoppingList(props) {
         let total = 0;
         for (const i of props.slist) {
             for (const j in i.items) {
-                if(i.items[j]){
+                if(i.items[j].isChecked){
                     total ++;
                 }
             }
@@ -42,8 +42,8 @@ function ShoppingList(props) {
         setChecked(total);
     }
 
-    function checkedHandler(category, item) {
-        props.slist[category].items[item] = !props.slist[category].items[item]
+    function checkedHandler(category_num, itemIdx) {
+        props.slist[category_num].items[itemIdx].isChecked = !props.slist[category_num].items[itemIdx].isChecked
         updateChecked()
     }
 
