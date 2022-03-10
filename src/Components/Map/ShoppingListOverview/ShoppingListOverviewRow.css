@@ -1,5 +1,5 @@
 .item-info{
-    padding-top: 5px;
+    padding: 5px 0;
     border-bottom: 1px solid #ECECEC;
     position: relative;
 }
@@ -10,5 +10,5 @@
 }
 
 .item-container p{
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
