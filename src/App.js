@@ -11,7 +11,7 @@ const App = () => {
         {
             category: "Chocolate",
             items: [
-                {name: "Chocolate-general", isChecked: false},
+                {name: "Toblerone", isChecked: false},
                 {name: "Sam's chocolate", isChecked: false},
                 {name: "Kitkat", isChecked: false}
             ],
@@ -29,7 +29,7 @@ const App = () => {
         {
             category: "Meat and Seafood",
             items: [
-                {name: "Beef - Generic", isChecked: false},
+                {name: "Beef", isChecked: false},
                 {name: "Foster Farm's Chicken", isChecked: false},
                 {name: "Chicken - Generic", isChecked: false}
             ],

@@ -1,9 +1,9 @@
 import "./RoundedCheckbox.css"
 
-const RoundedCheckbox = () => {
+const RoundedCheckbox = (props) => {
     return(
         <label className="rounded-checkbox-container">
-            <input type="checkbox"/>
+            <input type="checkbox" checked={props.isChecked}/>
             <span className="checkmark"></span>
         </label>
     )

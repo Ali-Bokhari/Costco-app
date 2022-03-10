@@ -31,7 +31,7 @@ const ShoppingListOverview = (props) => {
         <div>
             {itemsArr.map(
                     (item, idx) => {
-                        return <ShoppingListOverviewRow name={item.name} aisle={item.aisle} showAisle={true} key={idx}/>
+                        return <ShoppingListOverviewRow name={item.name} aisle={item.aisle} showAisle={true} isChecked={item.isChecked} key={idx}/>
                     })}
         </div>
     )

@@ -10,7 +10,7 @@ const ShoppingListOverviewRow =(props)=>{
             <Row className="item-container">
                 <Col xs={2}>
                     <div className="custom-checkbox">
-                        <RoundedCheckbox />
+                        <RoundedCheckbox isChecked={props.isChecked}/>
                     </div>
                 </Col>
                 <Col>

@@ -15,17 +15,17 @@ function ListPopover(props) {
     const popover = (
         <Popover id="popover-basic">
           <Popover.Body className="my-0">
-            <ListGroup>
+            <div className="item-group">
                 {props.items.map((item, idx) => (
                     <Container key={idx} className="listfont">
                     {/* <Row className="itemrow">
                         <Col data-key={idx} xs={1} ><Form.Check disabled className="my-1" checked={item.isChecked}/></Col>
                         <Col className="px-1 listfont">{item.name}</Col>
                     </Row> */}
-                    <ShoppingListOverviewRow aisle={false}/>
+                    <ShoppingListOverviewRow showAisle={false} name={item.name}/>
                     </Container>
                 ))}
-            </ListGroup>
+            </div>
           </Popover.Body>
         </Popover>
       );
