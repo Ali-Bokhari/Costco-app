@@ -4,6 +4,7 @@ import {useState} from 'react';
 import costcoMap from '../../images/LabledMap.png'
 import redMarker from '../../images/redmarker.png'
 import blueMarker from '../../images/bluemarker.png'
+import ListPopover from './ListPopover';
 
 import Image from 'react-bootstrap/Image';
 import Popover from 'react-bootstrap/Popover';
@@ -21,48 +22,28 @@ const areAllItemsChecked = (items) => {
 }
 
 function MapArea(props) {
-    const [redMarkers, setRedMarkers] = useState([]);
-    const [blueMarkers, setBlueMarkers] = useState([]);
+    let itemMarkers = [];
 
-    for (const itemGroup of props.slist) {
-        if (areAllItemsChecked(itemGroup.items)) {
-            blueMarkers.push(coordinates_arr[itemGroup.aisle - 1])
-        } else {
-            redMarkers.push(coordinates_arr[itemGroup.aisle - 1]);
-        }
+    for (const catitems of props.slist) {
+      itemMarkers.push(coordinates_arr[catitems.aisle]);
     }
 
-    function RedMarker() {
-        const popover = (
-          <Popover id="popover-basic">
-            <Popover.Header as="h6">items</Popover.Header>
-            <Popover.Body>
-              item1
-            </Popover.Body>
-          </Popover>
-        );
+    function handleMarker(e) {
+      const litems = props.slist[e.itemNumber].items;
+      if (areAllItemsChecked(litems)) {
         return (
-          <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-          <Image src={redMarker}/>
-        </OverlayTrigger>
-        );
-    }
-
-    function BlueMarker() {
+          <ListPopover imgsrc={blueMarker} items={litems}/>
+        )
+      } else {
         return (
-            <Image src={blueMarker}/>
-        );
-
+          <ListPopover imgsrc={redMarker} items={litems}/>
+        )
+      }
     }
 
     return (
         <div className="map-area">
-            <div id="bottom-layer">
-                <ImageMarker src={costcoMap} markers={redMarkers} markerComponent={RedMarker}/>
-            </div>
-            <div id="upper-layer">
-                <ImageMarker src={costcoMap} markers={blueMarkers} markerComponent={BlueMarker}/>
-            </div>
+            <ImageMarker src={costcoMap} markers={itemMarkers} markerComponent={handleMarker}/>
         </div>
     );
 }
