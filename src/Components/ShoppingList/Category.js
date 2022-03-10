@@ -26,7 +26,7 @@ function Category(props) {
                     <Container>
                         <Row className="itemrow">
                         <Col data-key={idx} xs={1} ><Form.Check disabled checked={item.isChecked}/></Col>
-                        <Col data-key={idx} className={itemclass + " itemcross"}>{item.name}</Col>
+                        <Col data-key={idx} className={itemclass + " itemcross" + item.isChecked}>{item.name}</Col>
                         <Col data-key={idx} xs={3}>Aisle {props.aisle}</Col>
                         </Row>
                     </Container>
