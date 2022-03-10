@@ -2,7 +2,7 @@ import "./RoundedCheckbox.css"
 
 const RoundedCheckbox = () => {
     return(
-        <label className="container">
+        <label className="rounded-checkbox-container">
             <input type="checkbox"/>
             <span className="checkmark"></span>
         </label>

@@ -8,6 +8,7 @@ import {faLocationArrow} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import RoundedCheckbox from "../Components/Map/ShoppingListOverview/RoundedCheckbox";
 import ShoppingListOverviewRow from "../Components/Map/ShoppingListOverview/ShoppingListOverviewRow";
+import ShoppingListOverview from "../Components/Map/ShoppingListOverview/ShoppingListOverview";
 
 function Map(props) {
     return (
@@ -59,9 +60,7 @@ function Map(props) {
                             <div id="">Completed: 1/7</div>
                         </div>
                         <div className="shopping-list-rows">
-                            <ShoppingListOverviewRow name="Fuji Apple" aisle={8} showAisle={true}/>
-                            <ShoppingListOverviewRow name="Fuji Apple" aisle={8} showAisle={true}/>
-                            <ShoppingListOverviewRow name="Fuji Apple" aisle={8} showAisle={true}/>
+                            <ShoppingListOverview slist={props.slist}/>
                         </div>
                     </Card.Body>
                 </Card>
