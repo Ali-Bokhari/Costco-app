@@ -59,7 +59,7 @@ function Map(props) {
                             <div id="">Completed: 1/7</div>
                         </div>
                         <div className="shopping-list-rows">
-                            <ShoppingListOverviewRow name="Fuji Apple" aisle={8} showAisle={false}/>
+                            <ShoppingListOverviewRow name="Fuji Apple" aisle={8} showAisle={true}/>
                             <ShoppingListOverviewRow name="Fuji Apple" aisle={8} showAisle={true}/>
                             <ShoppingListOverviewRow name="Fuji Apple" aisle={8} showAisle={true}/>
                         </div>
