@@ -22,7 +22,7 @@ const areAllItemsChecked = (items) => {
 }
 
 function MapArea(props) {
-    let itemMarkers = [];
+    const [itemMarkers, setitemMarkers] = useState([]);
 
     for (const catitems of props.slist) {
       itemMarkers.push(coordinates_arr[catitems.aisle]);
