@@ -7,6 +7,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Form from 'react-bootstrap/Form'
 
+import ShoppingListOverviewRow from "./ShoppingListOverview/ShoppingListOverviewRow";
+
 import './ListPopover.css'
 
 function ListPopover(props) {
@@ -15,11 +17,12 @@ function ListPopover(props) {
           <Popover.Body className="my-0">
             <ListGroup>
                 {props.items.map((item, idx) => (
-                    <Container key={idx}>
-                    <Row className="itemrow">
+                    <Container key={idx} className="listfont">
+                    {/* <Row className="itemrow">
                         <Col data-key={idx} xs={1} ><Form.Check disabled className="my-1" checked={item.isChecked}/></Col>
                         <Col className="px-1 listfont">{item.name}</Col>
-                    </Row>
+                    </Row> */}
+                    <ShoppingListOverviewRow aisle={false}/>
                     </Container>
                 ))}
             </ListGroup>
