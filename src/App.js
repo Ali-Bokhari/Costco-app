@@ -20,9 +20,9 @@ const App = () => {
         {
             category: "Beverages",
             items: [
-                {name: "Moosehead Beer", isChecked: true},
-                {name: "Sprite Zero", isChecked: true},
-                {name: "Mountain Dew", isChecked: true}
+                {name: "Moosehead Beer", isChecked: false},
+                {name: "Sprite Zero", isChecked: false},
+                {name: "Mountain Dew", isChecked: false}
             ],
             aisle: 11
         },
