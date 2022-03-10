@@ -3,16 +3,18 @@ import BottomNav from "../Components/BottomNav";
 import Header from "../Components/Header";
 import {Card} from "react-bootstrap/esm/index";
 import "./Map.css"
-import {Row, Col, Button} from "react-bootstrap";
-import {faCircleCheck, faLocationArrow} from "@fortawesome/free-solid-svg-icons";
+import {Button, Col, Row} from "react-bootstrap";
+import {faLocationArrow} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import RoundedCheckbox from "../Components/Map/ShoppingListOverview/RoundedCheckbox";
+import ShoppingListOverviewRow from "../Components/Map/ShoppingListOverview/ShoppingListOverviewRow";
 
-function Map (props){
+function Map(props) {
     return (
         <div className="map-page">
             <Header title={"Navigation - Map"}/>
             <div className="store-info-card">
-                <Card >
+                <Card>
                     <Card.Body>
                         <h6><strong>My Store</strong></h6>
                         <Row className="store-info">
@@ -26,7 +28,7 @@ function Map (props){
                 </Card>
             </div>
 
-            <div className="overview-card">
+            <div className="overview-card float-card">
                 <Card>
                     <Card.Body>
                         <div className="overview-info">
@@ -36,7 +38,7 @@ function Map (props){
                             </div>
                             <div id="navigation-btn">
                                 <Button variant="primary">
-                                    <FontAwesomeIcon className="nav-icon" icon={faLocationArrow} />
+                                    <FontAwesomeIcon className="nav-icon" icon={faLocationArrow}/>
                                     Start Navigation
                                 </Button>
                             </div>
@@ -46,6 +48,24 @@ function Map (props){
             </div>
 
             <MapArea slist={props.slist}/>
+
+            <div className="shopping-list-card float-card">
+                <Card>
+                    <div className="file-handle-material">
+                    </div>
+                    <Card.Body>
+                        <div className="">
+                            <strong>My Shopping List</strong>
+                            <div id="">Completed: 1/7</div>
+                        </div>
+                        <div className="shopping-list-rows">
+                            <ShoppingListOverviewRow/>
+                            <ShoppingListOverviewRow/>
+                            <ShoppingListOverviewRow/>
+                        </div>
+                    </Card.Body>
+                </Card>
+            </div>
             <BottomNav/>
         </div>
     )

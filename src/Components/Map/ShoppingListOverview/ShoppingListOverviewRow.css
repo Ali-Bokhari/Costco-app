@@ -1,0 +1,14 @@
+.item-info{
+    padding-top: 5px;
+    border-bottom: 1px solid #ECECEC;
+    position: relative;
+}
+
+.custom-checkbox{
+    position: absolute;
+    padding: 12px 0 0 2px;
+}
+
+.item-container p{
+    margin-bottom: 5px;
+}

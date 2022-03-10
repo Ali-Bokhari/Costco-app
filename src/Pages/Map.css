@@ -41,7 +41,7 @@
     margin-bottom: 10px;
 }
 
-.overview-card .card{
+.float-card .card{
     border-radius: 1rem;
     -webkit-box-shadow: 0 4px 6px -6px #222;
     -moz-box-shadow: 0 4px 6px -6px #222;
@@ -73,4 +73,30 @@
     justify-content: flex-end;
     align-items: center;
     color: #416EA3;
+}
+
+.shopping-list-card{
+    margin-top: 10px;
+    width: 90%;
+}
+
+.shopping-list-card .card{
+    min-height: 200px;
+}
+
+.shopping-list-card .card-body{
+    padding-top: 10px;
+}
+
+.file-handle-material{
+    margin: 5px auto 0 auto;
+    width: 9%;
+    height: 3px;
+    background: grey;
+    opacity: 0.25;
+    border-radius: 1rem;
+}
+
+.shopping-list-rows{
+    margin-top: 8px;
 }
