@@ -18,11 +18,7 @@ function ListPopover(props) {
             <div className="item-group">
                 {props.items.map((item, idx) => (
                     <Container key={idx} className="listfont">
-                    {/* <Row className="itemrow">
-                        <Col data-key={idx} xs={1} ><Form.Check disabled className="my-1" checked={item.isChecked}/></Col>
-                        <Col className="px-1 listfont">{item.name}</Col>
-                    </Row> */}
-                    <ShoppingListOverviewRow showAisle={false} name={item.name}/>
+                        <ShoppingListOverviewRow showAisle={false} name={item.name} isChecked={item.isChecked}/>
                     </Container>
                 ))}
             </div>
