@@ -78,6 +78,7 @@
 .shopping-list-card{
     margin-top: 10px;
     width: 90%;
+    min-height: 700px;
 }
 
 .shopping-list-card .card{
