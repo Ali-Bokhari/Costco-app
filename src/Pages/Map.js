@@ -9,8 +9,28 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import RoundedCheckbox from "../Components/Map/ShoppingListOverview/RoundedCheckbox";
 import ShoppingListOverviewRow from "../Components/Map/ShoppingListOverview/ShoppingListOverviewRow";
 import ShoppingListOverview from "../Components/Map/ShoppingListOverview/ShoppingListOverview";
+import {useEffect, useState} from "react";
 
 function Map(props) {
+    const [slist, setSlist] = useState([])
+
+    useEffect(()=>{setSlist(props.slist)},[])
+
+    const isCheckedHandler = (clickedItemName) => {
+
+        console.log(clickedItemName+ " clicked at Map Level")
+        let newSlist = JSON.parse(JSON.stringify(slist))
+        for (let catitems of newSlist) {
+            for (let item of catitems.items) {
+                if (item.name === clickedItemName){
+                    item.isChecked = !item.isChecked
+                    break;
+                }
+            }
+        }
+        setSlist(newSlist)
+    }
+
     return (
         <div className="map-page">
             <Header title={"Navigation - Map"}/>
@@ -48,7 +68,7 @@ function Map(props) {
                 </Card>
             </div>
 
-            <MapArea slist={props.slist}/>
+            <MapArea slist={slist}/>
 
             <div className="shopping-list-card float-card">
                 <Card>
@@ -60,7 +80,7 @@ function Map(props) {
                             <div id="">Completed: 1/7</div>
                         </div>
                         <div className="shopping-list-rows">
-                            <ShoppingListOverview slist={props.slist}/>
+                            <ShoppingListOverview slist={slist} onTapRadioButton={isCheckedHandler}/>
                         </div>
                     </Card.Body>
                 </Card>

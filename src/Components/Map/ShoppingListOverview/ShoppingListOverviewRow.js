@@ -5,11 +5,16 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faCircleCheck, faCirclePlus} from "@fortawesome/free-solid-svg-icons";
 
 const ShoppingListOverviewRow =(props)=>{
+    const clickRadioButtonHandler = () => {
+        console.log("I am clicked")
+        props.onTapRadioButton(props.name)
+    }
+
     return(
         <div className="shopping-list-overview">
             <Row className="item-container">
                 <Col xs={2}>
-                    <div className="custom-checkbox">
+                    <div onMouseUp={clickRadioButtonHandler} className="custom-checkbox">
                         <RoundedCheckbox isChecked={props.isChecked}/>
                     </div>
                 </Col>

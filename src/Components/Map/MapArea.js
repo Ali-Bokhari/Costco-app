@@ -1,5 +1,5 @@
 import ImageMarker from 'react-image-marker';
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 
 import costcoMap from '../../images/LabledMap.png'
 import redMarker from '../../images/redmarker.png'
@@ -24,12 +24,20 @@ const areAllItemsChecked = (items) => {
 function MapArea(props) {
     const [itemMarkers, setitemMarkers] = useState([]);
 
-    for (const catitems of props.slist) {
-      itemMarkers.push(coordinates_arr[catitems.aisle]);
-    }
+    useEffect(()=>{
+            const tempItemMarkers = []
+            for (const catitems of props.slist) {
+                tempItemMarkers.push(coordinates_arr[catitems.aisle]);
+            }
+            setitemMarkers(tempItemMarkers)
+        },
+        [props.slist]
+    )
+
 
     function handleMarker(e) {
-      const litems = props.slist[e.itemNumber].items;
+      const litems = props.slist?.[e.itemNumber]?.items || [];
+      // const litems = props.slist?.[e.itemNumber]?.items || [];
       if (areAllItemsChecked(litems)) {
         return (
           <ListPopover imgsrc={blueMarker} items={litems}/>

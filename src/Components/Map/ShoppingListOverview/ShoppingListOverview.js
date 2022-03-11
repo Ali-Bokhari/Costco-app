@@ -2,20 +2,19 @@ import {useEffect, useState} from "react";
 import ShoppingListOverviewRow from "./ShoppingListOverviewRow";
 
 const ShoppingListOverview = (props) => {
-    const [slist, setSlist] = useState(props.slist)
+    // const [slist, setSlist] = useState(props.slist)
     const [itemsArr, setItemsArr] = useState([])
 
-    const slistToArray = (slist) =>{
+    const slistToArray = (slist) => {
         let itemsArr = []
         for (const catitems of slist) {
-            for (const item of catitems.items){
+            for (const item of catitems.items) {
                 itemsArr.push(
                     {
                         name: item.name,
                         aisle: catitems.aisle,
                         isChecked: item.isChecked
                     }
-
                 )
             }
         }
@@ -23,16 +22,24 @@ const ShoppingListOverview = (props) => {
     }
 
     useEffect(() => {
-            setItemsArr(slistToArray(slist))
+            setItemsArr(slistToArray(props.slist))
         },
-        [slist])
+        [props.slist])
 
-    return(
+    const isCheckedHandler = (clickedItemName) =>{
+        console.log(clickedItemName+" clicked")
+        props.onTapRadioButton(clickedItemName)
+    }
+
+    return (
         <div>
             {itemsArr.map(
-                    (item, idx) => {
-                        return <ShoppingListOverviewRow name={item.name} aisle={item.aisle} showAisle={true} isChecked={item.isChecked} key={idx}/>
-                    })}
+                (item, idx) => {
+                    return <ShoppingListOverviewRow name={item.name} aisle={item.aisle} showAisle={true}
+                                                    isChecked={item.isChecked}
+                                                    onTapRadioButton={isCheckedHandler}
+                                                    key={idx}/>
+                })}
         </div>
     )
 
