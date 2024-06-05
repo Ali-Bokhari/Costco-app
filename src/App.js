@@ -51,9 +51,7 @@ const App = () => {
 
     return (
         <div>
-            <Route path="/list">
-                <List slist={slist}/>
-            </Route>
+            <List slist={slist}/>
             <Route path="/search-new">
                 <SearchNew onChangeShoppingListItems={changeShoppingListItemsHandler}/>
             </Route>
